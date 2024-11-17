@@ -4,11 +4,23 @@
 
 int main()
 {
-    int height, water,power;
+    float height, flow_rate, power_generated_inMegawatt;
+    const float gravity_const = 9.8; // Gravitational constant
+    const float efficiency = 0.9;   // 90% efficiency factor
 
-    printf("Enter the height of dam: ");
-    scanf("%d", &height);
-    printf("number of cubic meters of water flow from the top to the bottom: ");
-    scanf("%d", &water);
+    printf("Enter the height of the dam (in meters): ");
+    scanf("%f", &height);
+
+    printf("Enter the cubic meters of water flow per second (e.g., 1.30): ");
+    scanf("%f", &flow_rate);
+
+    // Calculate the total work done
+    float total_workDone = height * flow_rate * 1000 * gravity_const;
+
+    // Calculate the power generated in megawatts
+    power_generated_inMegawatt = (total_workDone * efficiency) / 1000000;
+
+    printf("Total power generated: %.2f MW\n", power_generated_inMegawatt);
+
     return 0;
 }
