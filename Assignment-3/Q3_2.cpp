@@ -2,37 +2,40 @@
 #include <string>
 using namespace std;
 
-class Book {
+class Book
+{
     string author, title, publisher;
     float price;
 
 public:
-    Book() {}
 
-    Book(string a, string t, string p, float pr) {
+    Book(string a, string t, string p, float pr)
+    {
         author = a;
         title = t;
         publisher = p;
         price = pr;
     }
 
-    bool match(string a, string t) {
+    bool match(string a, string t)
+    {
         return (author == a && title == t);
     }
 
-    void display() {
-        cout << "Title: " << title << "\nAuthor: " << author 
+    void display()
+    {
+        cout << "Title: " << title << "\nAuthor: " << author
              << "\nPublisher: " << publisher << "\nPrice: " << price << endl;
     }
 };
 
-int main() {
+int main()
+{
     const int size = 3;
     Book books[size] = {
         Book("R. Sharma", "C++ Basics", "TechPress", 299.99),
         Book("A. Kumar", "Python Pro", "CodeBooks", 399.50),
-        Book("R. Sharma", "DSA Magic", "EduPress", 350.75)
-    };
+        Book("R. Sharma", "DSA Magic", "EduPress", 350.75)};
 
     string searchAuthor, searchTitle;
     cout << "Enter book title: ";
@@ -41,8 +44,10 @@ int main() {
     getline(cin, searchAuthor);
 
     bool found = false;
-    for (int i = 0; i < size; i++) {
-        if (books[i].match(searchAuthor, searchTitle)) {
+    for (int i = 0; i < size; i++)
+    {
+        if (books[i].match(searchAuthor, searchTitle))
+        {
             cout << "Book Found:\n";
             books[i].display();
             found = true;
@@ -50,7 +55,8 @@ int main() {
         }
     }
 
-    if (!found) {
+    if (!found)
+    {
         cout << "Book not available in the shop.\n";
     }
 
