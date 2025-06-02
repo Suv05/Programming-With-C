@@ -3,7 +3,8 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     int a = 10, b = 20, c = 15;
     cout << "Largest is: " << MAX3(a, b, c) << endl;
     return 0;
